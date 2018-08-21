@@ -21,11 +21,14 @@ body {
     color: whitesmoke;
 }
 
+.topBarBlock:nth-child(2) {
+    text-transform: uppercase;
+}
+
 .gameArea {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 15px;
+    width: 80%;
     border: 1px solid #555;
+    margin: 0 auto;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -49,10 +52,29 @@ body {
     background-color: dodgerblue;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
     .gameArea {
         width: 100%;
-        border: 0 solid black;
-        padding: 2px;
+        border: 0;
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .gameArea div {
+        flex-basis: 33.33%;
+        height: calc((100vh - 60px)/6);
+    }
+    .topBarBlock:nth-child(2) {
+        display: none;
+    }
+    .topBarBlock {
+        flex-basis: 50%;
+    }
+}
+
+@media all and (max-width: 768px) and (orientation: landscape) {
+    .gameArea div {
+        height: calc((100vh - 60px)/3);
     }
 }
